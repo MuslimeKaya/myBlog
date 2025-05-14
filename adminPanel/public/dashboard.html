@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Admin Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <header class="admin-header">
+        <h1>Blog Admin Panel</h1>
+        <button id="logout-btn" class="btn secondary-btn">Çıkış Yap</button>
+      </header>
+
+      <div class="admin-content">
+        <div class="sidebar">
+          <ul>
+            <li class="active">
+              <a href="#" data-section="new-blog">Yeni Blog Ekle</a>
+            </li>
+            <li><a href="#" data-section="blog-list">Blog Yazıları</a></li>
+          </ul>
+        </div>
+
+        <div class="main-content">
+          <!-- Yeni Blog Ekleme Formu -->
+          <section id="new-blog" class="content-section active">
+            <h2>Yeni Blog Yazısı Ekle</h2>
+            <div id="blog-error-message" class="error-message"></div>
+            <div id="blog-success-message" class="success-message"></div>
+
+            <form id="blog-form">
+              <div class="form-group">
+                <label for="blog-title">Başlık</label>
+                <input
+                  type="text"
+                  id="blog-title"
+                  placeholder="Blog başlığını girin"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="blog-author">Yazar</label>
+                <input
+                  type="text"
+                  id="blog-author"
+                  placeholder="Yazar adını girin"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="blog-image">Görsel URL</label>
+                <input
+                  type="text"
+                  id="blog-image"
+                  placeholder="Görsel URL'ini girin"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="blog-content">İçerik</label>
+                <textarea
+                  id="blog-content"
+                  rows="10"
+                  placeholder="Blog içeriğini yazın"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn primary-btn">
+                Blog Yazısını Kaydet
+              </button>
+            </form>
+          </section>
+
+          <!-- Blog Listesi -->
+          <section id="blog-list" class="content-section">
+            <h2>Blog Yazıları</h2>
+            <div class="blog-list-container">
+              <div id="blogs-loading">Yükleniyor...</div>
+              <div id="blogs-container"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
